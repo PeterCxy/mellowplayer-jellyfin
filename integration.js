@@ -31,11 +31,11 @@ function update() {
     };
     let nowPlayingBar = document.getElementsByClassName('nowPlayingBar')[0];
     // For details page
-    let nowPlayingInfoControls = document.getElementsByClassName('nowPlayingInfoControls');
+    let nowPlayingPage = document.getElementsByClassName('nowPlayingPage');
     if (nowPlayingBar.className.indexOf("hidden") == -1) {
         initPlayingStatus(status);
         updateWithNowPlayingBar(status);
-    } else if (nowPlayingInfoControls.length > 0) {
+    } else if (nowPlayingPage.length > 0 && nowPlayingPage[0].className.indexOf("hide") == -1) {
         initPlayingStatus(status);
         updateWithNowPlayingInfo(status);
         status['isDetailPage'] = true;
