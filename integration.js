@@ -13,7 +13,7 @@ function update() {
     insertCss();
     
     let status = {
-        "playbackStatus": mellowplayer.PlaybackStatus.STOPPED,
+        "playbackStatus": MellowPlayer.PlaybackStatus.STOPPED,
         "canSeek": false,
         "canGoNext": false,
         "canGoPrevious": false,
@@ -32,7 +32,7 @@ function update() {
     let nowPlayingBar = document.getElementsByClassName('nowPlayingBar')[0];
     // For details page
     let nowPlayingPage = document.getElementsByClassName('nowPlayingPage');
-    if (nowPlayingBar.className.indexOf("hidden") == -1) {
+    if (nowPlayingBar && nowPlayingBar.className.indexOf("hidden") == -1) {
         initPlayingStatus(status);
         updateWithNowPlayingBar(status);
     } else if (nowPlayingPage.length > 0 && nowPlayingPage[0].className.indexOf("hide") == -1) {
@@ -40,14 +40,14 @@ function update() {
         updateWithNowPlayingInfo(status);
         status['isDetailPage'] = true;
     } else {
-        status['playbackStatus'] = mellowplayer.PlaybackStatus.STOPPED;
+        status['playbackStatus'] = MellowPlayer.PlaybackStatus.STOPPED;
     }
     lastStatus = status;
     return status;
 }
 
 function initPlayingStatus(status) {
-    status['playbackStatus'] = mellowplayer.PlaybackStatus.PLAYING;
+    status['playbackStatus'] = MellowPlayer.PlaybackStatus.PLAYING;
     status['canSeek'] = true;
     status['canGoNext'] = true;
     status['canGoPrevious'] = true;
@@ -57,7 +57,7 @@ function initPlayingStatus(status) {
 function updateWithNowPlayingBar(status) {
     let pauseButton = document.getElementsByClassName('playPauseButton')[0];
     if (pauseButton.innerHTML.indexOf(">pause<") == -1) {
-        status['playbackStatus'] = mellowplayer.PlaybackStatus.PAUSED;
+        status['playbackStatus'] = MellowPlayer.PlaybackStatus.PAUSED;
     }
         
     // Get song metadata
@@ -87,7 +87,7 @@ function updateWithNowPlayingBar(status) {
 function updateWithNowPlayingInfo(status) {
     let pauseButton = document.getElementsByClassName('btnPlayPause')[0];
     if (pauseButton.innerHTML.indexOf(">pause<") == -1) {
-        status['playbackStatus'] = mellowplayer.PlaybackStatus.PAUSED;
+        status['playbackStatus'] = MellowPlayer.PlaybackStatus.PAUSED;
     }
     
     // Get song metadata
