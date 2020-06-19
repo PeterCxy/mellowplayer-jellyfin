@@ -1,6 +1,8 @@
 Jellyfin Integration for MellowPlayer
 ===
 
+Main Repository: <https://cgit.typeblog.net/mellowplayer-jellyfin/>. __The GitHub repo is only a mirror.__
+
 A MellowPlayer plugin for your very own Jellyfin music library.
 
 [Jellyfin](https://jellyfin.org) is the volunteer-built media solution that puts *you* in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
